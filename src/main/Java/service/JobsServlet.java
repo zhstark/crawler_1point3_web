@@ -12,21 +12,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet("/echarts")
-public class MyServlet extends HttpServlet {
-    private String message;
-
-    @Override
-    public void init() throws ServletException {
-        message = "Hello world, this message is from servlet!";
-    }
-
+@WebServlet("/jobs")
+public class JobsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //设置响应内容类型
         JSONArray array = new JSONArray();
 
-        MongoDBConnection connection = new MongoDBConnection();
+        MongoDBConnection connection = new MongoDBConnection("jobs");
         List<Map<String, Integer>> statistics = connection.statisticCompanies();
         connection.close();
         for( Map<String, Integer> item : statistics) {

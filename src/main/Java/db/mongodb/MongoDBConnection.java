@@ -26,12 +26,12 @@ public class MongoDBConnection implements DBConnection {
         this.statisticsRange = statisticsRange;
     }
 
-    private int statisticsRange = 7;
+    private int statisticsRange = 180;
 
-    public MongoDBConnection() {
+    public MongoDBConnection(String collection) {
         mongoClient = MongoClients.create("mongodb://localhost:27017/");
-        database = mongoClient.getDatabase("cralwer_1point3");
-        coll = database.getCollection("posts");
+        database = mongoClient.getDatabase("crawler_1point3");
+        coll = database.getCollection(collection);
     }
 
     @Override
@@ -49,6 +49,10 @@ public class MongoDBConnection implements DBConnection {
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Map<String, Integer>> statisticCompanies() {
         List<Map<String, Integer>> result = new ArrayList<>();
@@ -60,9 +64,15 @@ public class MongoDBConnection implements DBConnection {
             cal.add(Calendar.DATE, -i);
             String date = sdf.format(cal.getTime());
             Map<String, Integer> counter = new HashMap<>();
+            // transfer date into Integer: 2020-08-02 --> 802
+            int d = Integer.parseInt(date.substring(5,7))*100+ Integer.parseInt(date.substring(8));
+            counter.put("Date", d);
             for (Document doc : coll.find (eq ("create_date", date))) {
                 if (doc.containsKey("company")) {
                     String companyName = doc.get("company", String.class);
+                    if (companyName == null) {
+                        continue;
+                    }
                     counter.put(companyName, counter.getOrDefault(companyName, 0) + 1);
                 }
             }

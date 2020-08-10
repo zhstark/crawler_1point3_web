@@ -58,7 +58,7 @@ ul {
 /* step3: main container */
 .container {
     margin: 60px auto;
-    max-width: 1800px;
+    max-width: 3200px;
     min-width: 600px;
 }
 
@@ -87,6 +87,10 @@ ul {
     color: #FBAF41;
 }
 
+.chart-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 /* 3.2 main section */
 .main-section {

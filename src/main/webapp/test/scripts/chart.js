@@ -1,11 +1,19 @@
 option = {
     title: {
-        text: '折线图堆叠'
+        text: '折线图堆叠',
+        bottom: 0,
+        left: "50%"
     },
     tooltip: {
-        trigger: 'axis'
+        trigger: 'axis',
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
+        type: 'scroll',
+        right: "15%",
+        left: "15%",
+        top: 0,
         data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
     },
     grid: {

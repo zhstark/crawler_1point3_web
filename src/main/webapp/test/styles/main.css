@@ -58,10 +58,14 @@ ul {
 /* step3: main container */
 .container {
     margin: 60px auto;
-    max-width: 1800px;
+    max-width: 3200px;
     min-width: 640px;
 }
 
+.chart-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 /* 3.1 main header */
 .container>header {
     align-items: center;
