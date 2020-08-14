@@ -202,3 +202,11 @@ ajax('GET', "http://localhost:8080/web2_war_exploded" + interviewsUrl, req,
     function() {
     showErrorMessage("ajax get fail");
     });
+var lcUrl = '/leetcode-interview-questions'
+ajax('GET', "http://localhost:8080/web2_war_exploded" + lcUrl, req,
+    function(res){
+    parse(res, "lc");
+    },
+    function() {
+    showErrorMessage("ajax get fail");
+    });

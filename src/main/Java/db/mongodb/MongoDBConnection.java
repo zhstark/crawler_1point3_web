@@ -18,20 +18,16 @@ public class MongoDBConnection implements DBConnection {
     private MongoDatabase database;
     private MongoCollection<Document> coll;
 
-    public int getStatisticsRange() {
-        return statisticsRange;
-    }
-
-    public void setStatisticsRange(int statisticsRange) {
-        this.statisticsRange = statisticsRange;
-    }
-
-    private int statisticsRange = 180;
-
-    public MongoDBConnection(String collection) {
+    public MongoDBConnection(String database) {
         mongoClient = MongoClients.create("mongodb://localhost:27017/");
-        database = mongoClient.getDatabase("crawler_1point3");
-        coll = database.getCollection(collection);
+        this.database = mongoClient.getDatabase(database);
+        coll = this.database.getCollection("test");
+    }
+
+    public MongoDBConnection(String database, String collection) {
+        mongoClient = MongoClients.create("mongodb://localhost:27017/");
+        this.database = mongoClient.getDatabase(database);
+        coll = this.database.getCollection(collection);
     }
 
     @Override
@@ -54,11 +50,11 @@ public class MongoDBConnection implements DBConnection {
      * @return
      */
     @Override
-    public List<Map<String, Integer>> statisticCompanies() {
+    public List<Map<String, Integer>> statisticCompanies(int daysRange) {
         List<Map<String, Integer>> result = new ArrayList<>();
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 
-        for(int i = 0; i < statisticsRange; ++i) {
+        for(int i = 0; i < daysRange; ++i) {
             Calendar cal = Calendar.getInstance();
             cal.setTime(new Date());
             cal.add(Calendar.DATE, -i);

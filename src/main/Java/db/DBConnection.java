@@ -34,6 +34,6 @@ public interface DBConnection {
      * index represent the date: today - index
      * map key = company, value = count
      */
-    public List<Map<String, Integer>> statisticCompanies();
+    public List<Map<String, Integer>> statisticCompanies(int n);
 
 }

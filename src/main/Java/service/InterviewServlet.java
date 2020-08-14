@@ -20,8 +20,12 @@ public class InterviewServlet extends HttpServlet {
         //设置响应内容类型
         JSONArray array = new JSONArray();
 
-        MongoDBConnection connection = new MongoDBConnection("interviews");
-        List<Map<String, Integer>> statistics = connection.statisticCompanies();
+        MongoDBConnection connection = new MongoDBConnection("crawler_1point3","interviews");
+        int daysRange = 180;
+        if (req.getParameter("days") != null) {
+            daysRange = Integer.parseInt(req.getParameter("days"));
+        }
+        List<Map<String, Integer>> statistics = connection.statisticCompanies(daysRange);
         connection.close();
         for( Map<String, Integer> item : statistics) {
             if (item == null) {

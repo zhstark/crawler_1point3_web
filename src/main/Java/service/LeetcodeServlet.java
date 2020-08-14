@@ -12,29 +12,29 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet("/jobs")
-public class JobsServlet extends HttpServlet {
+@WebServlet("/leetcode-interview-questions")
+public class LeetcodeServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //设置响应内容类型
+
         JSONArray array = new JSONArray();
 
-        MongoDBConnection connection = new MongoDBConnection("crawler_1point3","jobs");
+        MongoDBConnection connection = new MongoDBConnection("crawler_leetcode", "interview_questions");
         int daysRange = 180;
         if (req.getParameter("days") != null) {
             daysRange = Integer.parseInt(req.getParameter("days"));
         }
         List<Map<String, Integer>> statistics = connection.statisticCompanies(daysRange);
         connection.close();
-        for( Map<String, Integer> item : statistics) {
+        for (Map<String, Integer> item : statistics) {
+            if (item == null) {
+                continue;
+            }
             array.put(item);
         }
 
         RpcHelper.writeJsonArray(resp, array);
     }
-
-    @Override
-    public void destroy() {
-        super.destroy();
-    }
 }
+
