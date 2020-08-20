@@ -1,5 +1,5 @@
 (function() {
-
+// 引用后立即执行
     /* step2: variables */
     var user_id = '1111';
     var user_fullname = 'John Smith';
