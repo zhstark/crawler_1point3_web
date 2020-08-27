@@ -1,6 +1,6 @@
 var days = 180;
 
-var url="http://localhost:8080/web2_war_exploded/get_company_info?source=analysis&company="+company+"&days="+days.toString();
+var url=rootUrl+"get_company_info?source=analysis&company="+company+"&days="+days.toString();
 
 function draw(legends, dates, series, chartId) {
     let mychart = echarts.init(document.getElementById(chartId));

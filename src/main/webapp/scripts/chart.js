@@ -185,8 +185,9 @@ function showErrorMessage(msg) {
 }
 
 var req = JSON.stringify({});
-var jobsUrl = '/jobs';
-ajax('GET', "http://localhost:8080/web2_war_exploded" + jobsUrl, req,
+let jobsUrl = '/jobs';
+var url = window.location.href;
+ajax('GET', url + jobsUrl, req,
     function(res){
     parse(res, "jobs");
     },
@@ -194,16 +195,16 @@ ajax('GET', "http://localhost:8080/web2_war_exploded" + jobsUrl, req,
     showErrorMessage("ajax get fail");
     });
 
-var interviewsUrl = '/interviews';
-ajax('GET', "http://localhost:8080/web2_war_exploded" + interviewsUrl, req,
+let interviewsUrl = '/interviews';
+ajax('GET', url+interviewsUrl, req,
     function(res){
     parse(res, "interviews");
     },
     function() {
     showErrorMessage("ajax get fail");
     });
-var lcUrl = '/leetcode-interview-questions'
-ajax('GET', "http://localhost:8080/web2_war_exploded" + lcUrl, req,
+let lcUrl = '/leetcode-interview-questions'
+ajax('GET', url + lcUrl, req,
     function(res){
     parse(res, "lc");
     },
