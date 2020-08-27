@@ -7,7 +7,6 @@
     <title>Company Analysis</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <base href="http://localhost:8080/web2_war_exploded/company-info">
     <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
 </head>
 
@@ -71,9 +70,9 @@
             <!-- 基本信息 -->
             <div class="stock-intro col-md-12 col-sm-12 row">
                 <div class="stock-title">
-                    <h3 id="company-name" class="stock-name">Amazon</h3>
+                    <h3 id="company-name" class="stock-name"></h3>
                     <strong>
-                        <p>us_stock.name</p>
+                        <p>us_company.name</p>
                         <p>领域:
                             <button type="button" class="btn btn-default btn-xs">
                                 button
@@ -84,8 +83,6 @@
                                 button2
                             </button>
                         </p>
-                        <p>滚动市盈率(TTM): @latest_price[2]</p>
-                        <p>股息率:@latest_price[3]</p>
                     </strong>
                     <div class="stock-pyramid-rating col-md-12 row">
                         <br>
