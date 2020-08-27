@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="zhstark">
+    <title>1point3 statistic</title>
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <base href="file:///Users/Tim/Documents/IT/code/Java/web2/src/main/webapp/test/" >
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Hello</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="content" style="margin: auto;">
+        <div class="container-fluid">
+
+            <!-- 公司列表 -->
+            <div class="col-lg-2 col-md-1 industry-list">
+
+                <div class="industry-title">
+                    Companies：
+                </div>
+                <br>
+
+                <div class="company-group">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Amazon</a></li>
+                        <li><a href="#">Google</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Microsoft</a></li>
+                        <li><a href="#">Apple</a></li>
+                        <li><a href="#">Bloomberg</a></li>
+                        <li><a href="#">Oracle</a></li>
+                        <li><a href="#">字节跳动</a></li>
+                    </ul>
+                </div>
+                <hr>
+            </div>
+
+            <!-- 具体详情 -->
+            <div class="company-info col-lg-5 col-md-11">
+                <!-- 基本信息 -->
+                <div class="stock-intro col-md-12 col-sm-12 row">
+                    <div class="stock-title">
+                        <h3 class="stock-name">Amazon</h3>
+                        <strong>
+                            <p>us_stock.name</p>
+                            <p>领域:
+                                <button type="button" class="btn btn-default btn-xs">
+                                    button
+                                </button>
+                            </p>
+                            <p>行业:
+                                <button type="button" class="btn btn-default btn-xs">
+                                    button2
+                                </button>
+                            </p>
+                            <p>滚动市盈率(TTM): @latest_price[2]</p>
+                            <p>股息率:@latest_price[3]</p>
+                        </strong>
+                        <div class="stock-pyramid-rating col-md-12 row">
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!-- 图表 -->
+                <div id="level-table"  class="table-left col-md-12 col-sm-12 row">
+                    <script src="./scripts/fill_company_info.js"></script>
+                </div>
+            </div>
+
+            <!-- charts -->
+            <div class="col-lg-5 col-md-12">
+                <div id="chart2" style="height: 800px;"></div>
+                <script src="scripts/chart2.js"></script>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+    <!--<script src="scripts/main.js"></script>-->
+</body>
+
+</html>
