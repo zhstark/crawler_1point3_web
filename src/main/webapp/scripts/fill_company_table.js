@@ -72,6 +72,7 @@ function main(data) {
 }
 
 var company=getQueryVariable("company");
+document.getElementById("company-name").innerHTML=company
 var url="http://localhost:8080/web2_war_exploded/get_company_info?source=levels&company="+company;
 var req = JSON.stringify({});
 ajax('GET', url, req, function(res) {
@@ -79,3 +80,4 @@ ajax('GET', url, req, function(res) {
 }, function() {
     showErrorMessage("ajax get failed");
 })
+

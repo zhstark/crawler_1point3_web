@@ -1,7 +1,8 @@
 package service;
 
-import assist.Date;
+import assist.DateAssist;
 import db.mongodb.MongoDBConnection;
+import db.mongodb.MongodbUtil;
 import entity.CompanyLevelsItem;
 import org.json.JSONArray;
 
@@ -11,7 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/get_company_info")
 public class CompanyInfoServlet  extends HttpServlet {
@@ -25,7 +29,7 @@ public class CompanyInfoServlet  extends HttpServlet {
             array = getLevelInfo(company);
         } else if (source.equals("analysis")) {
             String days = req.getParameter("days");
-            if (days == null || days.length() == 0) {
+            if ((days == null) || (days.length() == 0)) {
                 days = "180";
             }
             array = getAnalysisChart(company, Integer.parseInt(days));
@@ -34,7 +38,7 @@ public class CompanyInfoServlet  extends HttpServlet {
     }
 
     private JSONArray getLevelInfo(String company) {
-        MongoDBConnection collection = new MongoDBConnection("company_info","levels");
+        MongoDBConnection collection = new MongoDBConnection(MongodbUtil.DB_COMPANY_INFO,"levels");
         JSONArray array = new JSONArray();
         for (CompanyLevelsItem clt: collection.searchCompanyLevelsItem(company)) {
             array.put(clt.toJSONObject());
@@ -43,12 +47,37 @@ public class CompanyInfoServlet  extends HttpServlet {
     }
 
     private JSONArray getAnalysisChart(String company, int days) {
-        MongoDBConnection collection = new MongoDBConnection("company_info","levels");
+        // key = name, value = data
+        Map<String, List<Integer>> line= new HashMap<>();
         JSONArray array = new JSONArray();
-        String today = Date.getCurrentDate();
-        String beginDate = Date.getDaysAgoDate(days);
-        List<Integer> counter = collection.countPosts(company,beginDate,today);
-        array.put(counter);
+
+        MongoDBConnection collection = new MongoDBConnection(MongodbUtil.DB_1POINT3,"interviews");
+        List<Integer> counter = new ArrayList<>();
+
+        for (int i = days-1; i >=0; i--) {
+            String date = DateAssist.getDaysAgoDate(i);
+            counter.add(collection.countPosts(company,date));
+        }
+        line.put("1point3 面经", new ArrayList<>(counter));
+        counter.clear();
+
+        collection = new MongoDBConnection(MongodbUtil.DB_1POINT3,"jobs");
+        for (int i = days-1; i >=0; i--) {
+            String date = DateAssist.getDaysAgoDate(i);
+            counter.add(collection.countPosts(company,date));
+        }
+        line.put("求职", new ArrayList<>(counter));
+        counter.clear();
+
+        collection = new MongoDBConnection(MongodbUtil.DB_LEETCODE,"interview_questions");
+        for (int i = days-1; i >=0; i--) {
+            String date = DateAssist.getDaysAgoDate(i);
+            counter.add(collection.countPosts(company,date));
+        }
+        line.put("LeetCode 面经", new ArrayList<>(counter));
+
+        array.put(line);
         return array;
     }
+
 }

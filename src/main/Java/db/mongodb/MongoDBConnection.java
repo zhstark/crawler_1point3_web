@@ -1,19 +1,23 @@
 package db.mongodb;
 
+import assist.DateAssist;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Sorts;
 import db.DBConnection;
 import entity.CompanyLevelsItem;
 import entity.Item;
 import org.bson.Document;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-import static com.mongodb.client.model.Filters.*;
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Filters.eq;
 
 public class MongoDBConnection implements DBConnection {
     private MongoClient mongoClient;
@@ -74,13 +78,9 @@ public class MongoDBConnection implements DBConnection {
     @Override
     public List<Map<String, Integer>> statisticCompanies(int daysRange) {
         List<Map<String, Integer>> result = new ArrayList<>();
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 
         for(int i = 0; i < daysRange; ++i) {
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(new Date());
-            cal.add(Calendar.DATE, -i);
-            String date = sdf.format(cal.getTime());
+            String date = DateAssist.getDaysAgoDate(i);
             Map<String, Integer> counter = new HashMap<>();
             // transfer date into Integer: 2020-08-02 --> 802
             int d = Integer.parseInt(date.substring(5,7))*100+ Integer.parseInt(date.substring(8));
@@ -99,36 +99,13 @@ public class MongoDBConnection implements DBConnection {
         return result;
     }
 
-    public List<Integer> countPosts(String company, String beginDate, String endDate) {
+    public int countPosts(String company, String date) {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        List<Integer> counter = new ArrayList<>();
-        Date begin;
-        Date end;
-        try {
-            begin = sdf.parse(beginDate);
-            end = sdf.parse(endDate);
-        } catch(Exception e) {
-            e.printStackTrace();
-            return counter;
-        }
-        Calendar beginCal = Calendar.getInstance();
-        beginCal.setTime(begin);
-        Calendar endCal = Calendar.getInstance();
-        endCal.setTime(end);
+
         int count = 0;
-        for (Document doc : coll.find(and(eq("company", company),and(gte("create_date", beginDate),lte("create_date",endDate)))).sort(Sorts.ascending("create_date"))) {
-            if (doc.get("create_date").equals(sdf.format(beginCal.getTime()))) {
+        for (Document doc : coll.find(and(eq("company", company),eq("create_date", date)))) {
                 count++;
-            } else {
-                counter.add(count);
-                count = 0;
-                beginCal.add(beginCal.DATE, 1);
-            }
         }
-        while (beginCal.before(endCal) || beginCal.equals(endCal)) {
-            counter.add(0);
-            beginCal.add(beginCal.DATE, 1);
-        }
-        return counter;
+        return count;
     }
 }

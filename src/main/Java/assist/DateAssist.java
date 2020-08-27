@@ -3,7 +3,7 @@ package assist;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Date {
+public class DateAssist {
     public static String getCurrentDate() {
         return getDaysAgoDate(0);
     }
