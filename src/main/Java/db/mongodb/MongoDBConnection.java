@@ -5,6 +5,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.ConnectionString;
 import db.DBConnection;
 import entity.CompanyLevelsItem;
 import entity.Item;
@@ -29,7 +30,8 @@ public class MongoDBConnection implements DBConnection {
     }
 
     public MongoDBConnection(String database, String collection) {
-        mongoClient = MongoClients.create("mongodb://localhost:27017/");
+        //mongoClient = MongoClients.create("mongodb://localhost:27017/");
+        mongoClient = MongoClients.create();
         this.database = mongoClient.getDatabase(database);
         coll = this.database.getCollection(collection);
     }

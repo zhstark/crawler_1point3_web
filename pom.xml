@@ -47,7 +47,7 @@
     <dependency>
       <groupId>org.mongodb</groupId>
       <artifactId>mongodb-driver-sync</artifactId>
-      <version>4.0.5</version>
+      <version>3.12.6</version>
     </dependency>
     <dependency>
       <groupId>com.weibo.api.directmessage</groupId>
