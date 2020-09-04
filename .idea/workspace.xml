@@ -3,6 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="web2:war" />
+      <artifact name="web2:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
@@ -263,42 +264,7 @@
             <path>
               <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="assist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="Java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -464,14 +430,14 @@
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="web2:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/web2_war" />
-          </settings>
-        </artifact>
         <artifact name="web2:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/web2_war_exploded" />
+          </settings>
+        </artifact>
+        <artifact name="web2:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web2_war" />
           </settings>
         </artifact>
       </deployment>
@@ -534,7 +500,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="web2:war" />
           <artifact name="web2:war exploded" />
         </option>
       </method>
@@ -573,7 +538,7 @@
       <workItem from="1597079472555" duration="468000" />
       <workItem from="1597209932915" duration="31763000" />
       <workItem from="1598489431386" duration="18088000" />
-      <workItem from="1599087323922" duration="15850000" />
+      <workItem from="1599087323922" duration="16120000" />
     </task>
     <servers />
   </component>
@@ -598,7 +563,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128502000" />
+    <option name="totallyTimeSpent" value="128772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -611,9 +576,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4442771" visible="true" weight="0.096505165" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4442771" visible="true" weight="0.096505165" />
       <window_info id="Structure" order="1" sideWeight="0.5557229" side_tool="true" weight="0.19142176" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -624,13 +588,13 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980143" weight="0.49001536" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980143" visible="true" weight="0.49001536" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5917395" weight="0.33102918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32872504" />
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4988086" weight="0.32872504" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" weight="0.32872504" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49960285" weight="0.32872504" />
