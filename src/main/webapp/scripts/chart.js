@@ -206,7 +206,7 @@ let jobsUrl = '/jobs';
 var url = window.location.href;
 
 // 1
-ajax('GET', url + jobsUrl, req,
+ajax('GET', url + jobsUrl+"?byWeek=true", req,
     function(res){
     c1t1Option = parse(res, "jobs");
     var chart1Tab1Table = echarts.init($chart1tab1);
@@ -216,7 +216,7 @@ ajax('GET', url + jobsUrl, req,
     showErrorMessage("ajax get fail");
     }
 );
-ajax('GET', url + jobsUrl+"?byWeek=true", req,
+ajax('GET', url + jobsUrl, req,
     function(res){
     c1t2Option = parse(res, "jobs");
     },
@@ -227,7 +227,7 @@ ajax('GET', url + jobsUrl+"?byWeek=true", req,
 
 //2
 let interviewsUrl = '/interviews';
-ajax('GET', url+interviewsUrl, req,
+ajax('GET', url+interviewsUrl+"?byWeek=true", req,
     function(res){
     c2t1Option = parse(res, "interviews");
     var chart2Tab1Table = echarts.init($chart2tab1);
@@ -237,7 +237,7 @@ ajax('GET', url+interviewsUrl, req,
     showErrorMessage("ajax get fail");
     }
 );
-ajax('GET', url+interviewsUrl+"?byWeek=true", req,
+ajax('GET', url+interviewsUrl, req,
     function(res){
     c2t2Option = parse(res, "interviews");
     },
@@ -248,7 +248,7 @@ ajax('GET', url+interviewsUrl+"?byWeek=true", req,
 
 // 3
 let lcUrl = '/leetcode-interview-questions'
-ajax('GET', url + lcUrl, req,
+ajax('GET', url + lcUrl+"?byWeek=true", req,
     function(res){
     c3t1Option = parse(res, "lc");
     var chart3Tab1Table = echarts.init($chart3tab1);
@@ -258,7 +258,7 @@ ajax('GET', url + lcUrl, req,
     showErrorMessage("ajax get fail");
     }
 );
-ajax('GET', url + lcUrl+"?byWeek=true", req,
+ajax('GET', url + lcUrl, req,
     function(res){
     c3t2Option = parse(res, "lc");
     },

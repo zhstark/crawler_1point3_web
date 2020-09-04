@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="web2:war" />
       <artifact name="web2:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfa1da50-2510-407e-aa2d-db5d737d4355" name="Default Changelist" comment="" />
+    <list default="true" id="cfa1da50-2510-407e-aa2d-db5d737d4355" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/webDemo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/webDemo/scripts/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/scripts/chart.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="265">
+              <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -538,7 +543,7 @@
       <workItem from="1597079472555" duration="468000" />
       <workItem from="1597209932915" duration="31763000" />
       <workItem from="1598489431386" duration="18088000" />
-      <workItem from="1599087323922" duration="16120000" />
+      <workItem from="1599087323922" duration="16743000" />
     </task>
     <servers />
   </component>
@@ -563,7 +568,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128772000" />
+    <option name="totallyTimeSpent" value="129395000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -577,7 +582,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1417" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4442771" visible="true" weight="0.096505165" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4442771" visible="true" weight="0.096505165" />
       <window_info id="Structure" order="1" sideWeight="0.5557229" side_tool="true" weight="0.19142176" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -588,7 +593,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980143" visible="true" weight="0.49001536" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4980143" visible="true" weight="0.49001536" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5917395" weight="0.33102918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -596,7 +601,7 @@
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4988086" weight="0.32872504" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" weight="0.32872504" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5019857" side_tool="true" weight="0.49001536" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49960285" weight="0.32872504" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32872504" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
@@ -1013,8 +1018,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="265">
+          <caret line="18" column="55" lean-forward="true" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
