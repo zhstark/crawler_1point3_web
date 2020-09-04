@@ -208,7 +208,7 @@ var url = window.location.href;
 // 1
 ajax('GET', url + jobsUrl, req,
     function(res){
-    c1t1Option = parse(res, "chart1tab1");
+    c1t1Option = parse(res, "jobs");
     var chart1Tab1Table = echarts.init($chart1tab1);
     chart1Tab1Table.setOption(c1t1Option);
     },

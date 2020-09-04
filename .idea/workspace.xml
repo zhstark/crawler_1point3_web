@@ -6,33 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfa1da50-2510-407e-aa2d-db5d737d4355" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/Java/assist/dbStatisticAssist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/db/mongodb/MongoDBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/db/mongodb/MongoDBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/service/InterviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/service/InterviewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/service/JobsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/service/JobsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Java/service/LeetcodeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Java/service/LeetcodeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/index_bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test/index_bootstrap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/scripts/chart2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test/scripts/chart2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/mongodb/MongoDBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/mongodb/MongoDBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/InterviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/InterviewServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/JobsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/JobsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/LeetcodeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/LeetcodeServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/db/mongodb/MongoDBConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/db/mongodb/MongoDBConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/InterviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/InterviewServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/JobsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/JobsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/LeetcodeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/WEB-INF/classes/service/LeetcodeServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/scripts/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/scripts/chart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/test/index_bootstrap.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/test/index_bootstrap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/test/scripts/chart2.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/test/scripts/chart2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/webDemo/test/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/webDemo/test/test.html" afterDir="false" />
-    </list>
+    <list default="true" id="cfa1da50-2510-407e-aa2d-db5d737d4355" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+            <state relative-caret-position="284">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -487,13 +461,17 @@
       </method>
     </configuration>
     <configuration name="webDemo" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.212" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/web2_war/" />
       <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web2:war">
           <settings>
             <option name="CONTEXT_PATH" value="/web2_war" />
+          </settings>
+        </artifact>
+        <artifact name="web2:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web2_war_exploded" />
           </settings>
         </artifact>
       </deployment>
@@ -557,6 +535,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="web2:war" />
+          <artifact name="web2:war exploded" />
         </option>
       </method>
     </configuration>
@@ -594,7 +573,7 @@
       <workItem from="1597079472555" duration="468000" />
       <workItem from="1597209932915" duration="31763000" />
       <workItem from="1598489431386" duration="18088000" />
-      <workItem from="1599087323922" duration="15494000" />
+      <workItem from="1599087323922" duration="15850000" />
     </task>
     <servers />
   </component>
@@ -619,7 +598,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128146000" />
+    <option name="totallyTimeSpent" value="128502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,13 +624,13 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4980143" visible="true" weight="0.49001536" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980143" weight="0.49001536" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5917395" weight="0.33102918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32872504" />
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4988086" weight="0.32872504" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" weight="0.32872504" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" visible="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119144" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49960285" weight="0.32872504" />
@@ -1070,8 +1049,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="20" column="82" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
+        <state relative-caret-position="284">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
