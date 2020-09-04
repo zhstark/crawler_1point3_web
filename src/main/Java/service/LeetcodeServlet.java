@@ -1,5 +1,6 @@
 package service;
 
+import assist.dbStatisticAssist;
 import db.mongodb.MongoDBConnection;
 import org.json.JSONArray;
 
@@ -20,20 +21,16 @@ public class LeetcodeServlet extends HttpServlet {
 
         JSONArray array = new JSONArray();
 
-        MongoDBConnection connection = new MongoDBConnection("crawler_leetcode", "interview_questions");
         int daysRange = 180;
         if (req.getParameter("days") != null) {
             daysRange = Integer.parseInt(req.getParameter("days"));
         }
-        List<Map<String, Integer>> statistics = connection.statisticCompanies(daysRange);
-        connection.close();
-        for (Map<String, Integer> item : statistics) {
-            if (item == null) {
-                continue;
-            }
-            array.put(item);
-        }
 
+        if (req.getParameter("byWeek") != null && req.getParameter("byWeek").equals("true")) {
+            array = dbStatisticAssist.collectDataByWeek("crawler_leetcode", "interview_questions", daysRange);
+        } else {
+            array = dbStatisticAssist.collectData("crawler_leetcode", "interview_questions", daysRange);
+        }
         RpcHelper.writeJsonArray(resp, array);
     }
 }

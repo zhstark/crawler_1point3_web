@@ -12,10 +12,7 @@ import entity.Item;
 import org.bson.Document;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
@@ -87,20 +84,35 @@ public class MongoDBConnection implements DBConnection {
             // transfer date into Integer: 2020-08-02 --> 802
             int d = Integer.parseInt(date.substring(5,7))*100+ Integer.parseInt(date.substring(8));
             counter.put("Date", d);
-            for (Document doc : coll.find (eq ("create_date", date))) {
-                if (doc.containsKey("company")) {
-                    String companyName = doc.get("company", String.class);
-                    if (companyName == null) {
-                        continue;
-                    }
-                    counter.put(companyName, counter.getOrDefault(companyName, 0) + 1);
-                }
-            }
+            collectCompanyOnDate(counter, date);
             result.add(counter);
         }
         return result;
     }
 
+    public List<Map<String, Integer>> statisticByWeek(int daysRange) {
+        List<Map<String, Integer>> result = new ArrayList<>();
+
+        // traverse all days
+        for (int i = 0; i < daysRange; i++) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.add(Calendar.DATE, -i);
+            // check if it's the first day of the week
+            if (calendar.get(Calendar.DAY_OF_WEEK) == 1) {
+                Map<String, Integer> counter = new HashMap<>();
+                // add date info
+                counter.put("Date", (calendar.get(Calendar.MONTH)+1)*100 + calendar.get(Calendar.DATE));
+                // add companies count in this week
+                for (int j = i; j <i+7; j++) {
+                    String date = DateAssist.getDaysAgoDate(j);
+                    collectCompanyOnDate(counter, date);
+                }
+                result.add(counter);
+            }
+        }
+
+        return result;
+    }
     public int countPosts(String company, String date) {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 
@@ -109,5 +121,17 @@ public class MongoDBConnection implements DBConnection {
                 count++;
         }
         return count;
+    }
+
+    private void collectCompanyOnDate(Map<String, Integer> counter, String date) {
+        for (Document doc : coll.find (eq ("create_date", date))) {
+            if (doc.containsKey("company")) {
+                String companyName = doc.get("company", String.class);
+                if (companyName == null) {
+                    continue;
+                }
+                counter.put(companyName, counter.getOrDefault(companyName, 0) + 1);
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package service;
 
+import assist.dbStatisticAssist;
 import db.mongodb.MongoDBConnection;
 import org.json.JSONArray;
 
@@ -18,16 +19,14 @@ public class JobsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //设置响应内容类型
         JSONArray array = new JSONArray();
-
-        MongoDBConnection connection = new MongoDBConnection("crawler_1point3","jobs");
         int daysRange = 180;
         if (req.getParameter("days") != null) {
             daysRange = Integer.parseInt(req.getParameter("days"));
         }
-        List<Map<String, Integer>> statistics = connection.statisticCompanies(daysRange);
-        connection.close();
-        for( Map<String, Integer> item : statistics) {
-            array.put(item);
+        if (req.getParameter("byWeek") != null && req.getParameter("byWeek").equals("true")) {
+            array = dbStatisticAssist.collectDataByWeek("crawler_1point3", "jobs", daysRange);
+        } else {
+            array = dbStatisticAssist.collectData("crawler_1point3", "jobs", daysRange);
         }
 
         RpcHelper.writeJsonArray(resp, array);
