@@ -27,8 +27,9 @@ public class MongoDBConnection implements DBConnection {
     }
 
     public MongoDBConnection(String database, String collection) {
-        //mongoClient = MongoClients.create("mongodb://localhost:27017/");
-        mongoClient = MongoClients.create();
+        String mongoUrl = System.getenv("MONGO_URL");
+        mongoClient = MongoClients.create(mongoUrl ==null ? "mongodb://localhost:27017/" : mongoUrl);
+//        mongoClient = MongoClients.create();
         this.database = mongoClient.getDatabase(database);
         coll = this.database.getCollection(collection);
     }
