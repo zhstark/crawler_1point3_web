@@ -1,10 +1,4 @@
 
-var chart1tab1
-var chart1tab2
-var chart2tab1
-var chart2tab2
-var chart3tab1
-var chart3tab2
 function parse(arr, chartId){
     let array = JSON.parse(arr);
     var companies = new Map();
@@ -34,7 +28,7 @@ function getCompaniesAndXAxis(array, companies, xAxis) {
                 if (!companies.has(com)) {
                     companies.set(com, 0);
                 }
-                companies.set(com, companies.get(com)+1);
+                companies.set(com, companies.get(com)+obj[com]);
             }
         }
     }    
